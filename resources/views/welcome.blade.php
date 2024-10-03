@@ -46,8 +46,10 @@
     <div class="login-container">
         <h2>Your mind! Our mind </h2>
         <input type="text" placeholder="Blog name " required>
-
-        <button type="submit">Bog name</button>
+<a href="/login">
+        <button href="#" type="submit">Bog name</button>
+</a>
+        <a href="/register">login/register</a>
     </div>
 </body>
 </html>
