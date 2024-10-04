@@ -64,6 +64,32 @@
                                 @endif
                             </div>
                         </div>
+
+                      
+                        <script>
+                            function onSignIn(googleUser) {
+                              var profile = googleUser.getBasicProfile();
+                              console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+                              console.log('Name: ' + profile.getName());
+                              console.log('Image URL: ' + profile.getImageUrl());
+                              console.log('Email: ' + profile.getEmail());
+
+                              // Here you would send the ID token to your server for verification
+                              var id_token = googleUser.getAuthResponse().id_token;
+                              // Send the ID token to your backend
+                            }
+
+                            function signOut() {
+                              var auth2 = gapi.auth2.getAuthInstance();
+                              auth2.signOut().then(function () {
+                                console.log('User signed out.');
+                              });
+                            }
+                          </script>
+
+                        <script src="https://apis.google.com/js/platform.js" async defer></script>
+                        <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline" data-text="sign_in_with" data-size="large" data-logo_alignment="left">55656</div>
+                       ooo </a>
                     </form>
                 </div>
             </div>

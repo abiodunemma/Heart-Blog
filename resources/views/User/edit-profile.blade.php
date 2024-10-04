@@ -86,7 +86,7 @@
             </div>
             <div class="form-group">
                 <label for="bio">Bio:</label>
-                <textarea id="bio" name="bio"  placeholder="wow! what on your mind"rows="4"></textarea>
+                <textarea id="bio" name="bio"  placeholder="wow! what on your mind"></textarea>
             </div>
             <button type="submit" class="submit-button">Save Changes</button>
         </form>
