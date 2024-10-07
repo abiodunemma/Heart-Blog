@@ -132,7 +132,7 @@
             <ul>
                 <h4>Username</h4>
                 <h4>Email:{{  Auth::User()->email  }}</h4>
-                
+
 
                 <li><a href="#">Home</a></li>
                 <li><a href="User/edit-profile">Edit profile</a></li>

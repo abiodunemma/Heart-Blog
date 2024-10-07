@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('google_id', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('image')->nullable();
+            $table->string('bio')->nullable();
         });
     }
 
@@ -22,6 +22,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('google_id');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('image');
+            $table->dropColumn('bio');
+        });
     }
 };

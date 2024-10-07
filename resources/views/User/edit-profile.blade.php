@@ -70,10 +70,12 @@
 <body>
     <div class="container">
         <h1>Edit Profile</h1>
-        <form>
+        <form enctype="multipart/form-data" method="POST" action="{{ route('User.update', Auth::user()->id) }}">
+            @csrf
+            @method('put')
             <div class="form-group">
                 <label for="profile-pic">Profile Picture:</label>
-                <input type="file" id="profile-pic" name="profile-pic">
+                <input type="file" id="profile-pic" name="image">
             </div>
             <div class="form-group">
                 <label for="name">Name:</label>
