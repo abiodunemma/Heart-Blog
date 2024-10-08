@@ -70,9 +70,10 @@
 <body>
     <div class="container">
         <h1>Edit Profile</h1>
-        <form enctype="multipart/form-data" method="POST" action="{{ route('User.update', Auth::user()->id) }}">
+        <form enctype="multipart/form-data" method="POST" action="/User/edit-profile/ {{  Auth::User()->id  }}">
+            <input type="hidden" name=" _method" value="put"/>
             @csrf
-            @method('put')
+
             <div class="form-group">
                 <label for="profile-pic">Profile Picture:</label>
                 <input type="file" id="profile-pic" name="image">
@@ -89,6 +90,11 @@
             <div class="form-group">
                 <label for="bio">Bio:</label>
                 <textarea id="bio" name="bio"  placeholder="wow! what on your mind"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="bio">password:</label>
+                <textarea id="password" name="password"  placeholder="wow! what on your mind"></textarea>
             </div>
             <button type="submit" class="submit-button">Save Changes</button>
         </form>

@@ -1,9 +1,8 @@
 <?php
 
-
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
-
+use Hash;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -15,25 +14,32 @@ class UserController extends Controller
         $this->middleware('auth');
     }
 
+public function edit($id){
+    $Users = User::find($id);
+    return$id;
+ //   return view ('/User/edit-profile', ["data"=>$Users]);
 
-    public function edit(User $user){
-        $validated = request()->validate(
-           [
-             'image' => 'image',
-             'name' => 'required|min:40',
-            'email' => 'required|min:40',
-             'bio' => 'required|min:40',
-          // return view('/User/edit-profile');
-        ]
-     );
+}
 
-    $user->update($validated);
+function editprofile(Request $request, $id){
+    // return "edit";
+     $user= User::find($id);
+     $user->name=$request->name;
+     $user->email=$request->email;
+     $user->password= $request->password;
+     $user->image= $request->image;
+     $user->bio= $request->bio;
+     if($user->save()){
+         return redirect("/home");
 
-   //  return redirect()->route('/User/update');
-
-
+     }else{
+         echo "Please something went";
+     }
     }
-    public function update(){
-return view('/User/update');
-    }
+public function profile(){
+  $userData = User::all();
+    return view  ('/User/edit-profile');
+ //  return view('/User/edit-profile', ['users' => $userData]);
+}
+
 }

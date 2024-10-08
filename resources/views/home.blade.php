@@ -135,7 +135,7 @@
 
 
                 <li><a href="#">Home</a></li>
-                <li><a href="User/edit-profile">Edit profile</a></li>
+                <li><a href="{{ url('User/edit-profile')}}">Edit profile</a></li>
                 <li><a href="#">Settings</a></li>
                 <li><a href="#">Messages</a></li>
                 <li><a href="/logout">Logout</a></li>
