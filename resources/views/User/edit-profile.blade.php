@@ -94,9 +94,14 @@
 
             <div class="form-group">
                 <label for="bio">password:</label>
-                <textarea id="password" name="password"  placeholder="wow! what on your mind"></textarea>
+                <textarea id="password" name="password"  placeholder="****"></textarea>
             </div>
             <button type="submit" class="submit-button">Save Changes</button>
+            <br>
+            <br>
+<a>
+            <button type="submit"  href="/User/edit-profile" class="submit-button">profile</button>
+</a>
         </form>
     </div>
 </body>

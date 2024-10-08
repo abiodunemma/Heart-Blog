@@ -24,13 +24,18 @@ public function edit($id){
 function editprofile(Request $request, $id){
     // return "edit";
      $user= User::find($id);
+     $user->photo=$request->photo;
      $user->name=$request->name;
      $user->email=$request->email;
-     $user->password= $request->password;
-     $user->image= $request->image;
      $user->bio= $request->bio;
+     if(!empty($request->password))
+     {
+        $user->password = Hash::make($request->password);
+     }
+     //$user->password= $request->password;
+
      if($user->save()){
-         return redirect("/home");
+         return redirect("/User/edit-profile");
 
      }else{
          echo "Please something went";

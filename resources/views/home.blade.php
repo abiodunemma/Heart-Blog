@@ -134,7 +134,8 @@
                 <h4>Email:{{  Auth::User()->email  }}</h4>
 
 
-                <li><a href="#">Home</a></li>
+
+                <li><a href="{{ url('/land') }}">Home</a></li>
                 <li><a href="{{ url('User/edit-profile')}}">Edit profile</a></li>
                 <li><a href="#">Settings</a></li>
                 <li><a href="#">Messages</a></li>
@@ -150,7 +151,7 @@
             <h1>Welcome, {{  Auth::User()->name  }}</h1>
             <div class="profile-info">
                 <img src="{{  Auth::User()->photo  }}" alt="Profile Picture">
-                <p>Bio:edit bio
+                <p>Bio:  {{  Auth::User()->bio  }}
 
                 </p>
 

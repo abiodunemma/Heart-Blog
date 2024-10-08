@@ -2,14 +2,22 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\GoogleController;
+use Illuminate\Support\Facades\FrontController;
 use App\Models\User;
+
 
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-//user
+// home page functionality
+Route::get('/land', [App\Http\Controllers\FrontController::class, 'front'])->middleware(('auth'))->name('land');
+
+
+
+
+//userkyc
 Route::get('edit/{id}', [App\Http\Controllers\UserController::class, 'edit']);
 Route::put('/User/edit-profile/{id}', [App\Http\Controllers\UserController::class, 'editprofile'])->middleware(('auth'));
 Route::get('/User/edit-profile', [App\Http\Controllers\UserController::class, 'profile'])->middleware(('auth'))->name('/User/edit-profile');
@@ -18,7 +26,7 @@ Route::get('/new', [App\Http\Controllers\HomeController::class, 'new'])->name('n
 //Route::post('/User/update', [App\Http\Controllers\UserController::class, 'update'])->name('User.update');
 
 
-// userkyc
+// user
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
