@@ -64,8 +64,8 @@
     }
 
     .profile-info img {
-        width: 100px;
-        height: 100px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
         margin-right: 20px;
     }
@@ -130,28 +130,28 @@
         <nav class="sidebar">
             <h2>Profile</h2>
             <ul>
-                <h4>Username</h4>
-                <h4>Email:{{  Auth::User()->email  }}</h4>
 
 
 
-                <li><a href="{{ url('/land') }}">Home</a></li>
+
+                <li><a href="{{ url('/Upload/home') }}">Home</a></li>
                 <li><a href="{{ url('User/edit-profile')}}">Edit profile</a></li>
+                <li><a href="{{ url('/Upload/upload') }}">Upload</a></li>
                 <li><a href="#">Settings</a></li>
-                <li><a href="#">Messages</a></li>
                 <li><a href="/logout">Logout</a></li>
             </ul>
-            <button id="toggle-theme" class="toggle">Toggle Dark Mode</button>
 
-            <div class="toggle-container">
-                <div class="toggle" id="toggle-theme"></div>
-            </div>
         </nav>
         <main class="main-content">
-            <h1>Welcome, {{  Auth::User()->name  }}</h1>
+            <h4>Welcome, {{  Auth::User()->name  }}</h4>
             <div class="profile-info">
                 <img src="{{  Auth::User()->photo  }}" alt="Profile Picture">
                 <p>Bio:  {{  Auth::User()->bio  }}
+                    <br>
+                </br>
+                <br>
+                    <p>email:  {{  Auth::User()->email  }}
+
 
                 </p>
 
@@ -172,7 +172,11 @@
             toggleContainer.classList.toggle('dark-mode');
         })
         });
+        <button id="toggle-theme" class="toggle">Toggle Dark Mode</button>
 
+        <div class="toggle-container">
+            <div class="toggle" id="toggle-theme"></div>
+        </div>
 
     </script>
 </body>

@@ -12,7 +12,8 @@ Route::get('/', function () {
 });
 
 // home page functionality
-Route::get('/land', [App\Http\Controllers\FrontController::class, 'front'])->middleware(('auth'))->name('land');
+Route::get('/Upload/home', [App\Http\Controllers\FrontController::class, 'front'])->middleware(('auth'))->name('/Upload/home');
+Route::get('/Upload/upload', [App\Http\Controllers\FrontController::class, 'upload'])->middleware(('auth'))->name('/Upload/upload');
 
 
 

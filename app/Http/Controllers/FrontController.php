@@ -9,7 +9,12 @@ class FrontController extends Controller
 {
     public function front()
     {
-        return view ('/land');
+        return view ('/Upload/home');
+    }
+
+    public function upload()
+    {
+        return view ('/Upload/upload');
     }
 
 
