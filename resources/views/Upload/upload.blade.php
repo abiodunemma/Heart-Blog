@@ -71,16 +71,19 @@
 <body>
     <div class="container">
         <h1>Upload Your Thumbnail and Quote</h1>
-        <form id="uploadForm">
+        <form id="uploadForm" action="{{ url('/Upload/home') }}" method="POST">
+@csrf
+input type="hidden" placeholder=""  name="userid" id="userid" value="{{ Auth::user()->id  }}">
+        <input type="hidden" placeholder=""  name="name" id="username" value="{{ Auth::user()->name  }}">
             <div class="form-group">
                 <label for="thumbnail">Thumbnail:</label>
-                <input type="file" id="thumbnail" accept="image/*" required>
+                <input type="file" id="thumbnail" name="image" accept="image/*" required>
             </div>
             <div class="form-group">
                 <label for="quote">Quote:</label>
-                <textarea id="quote" required></textarea>
+                <textarea id="quote" name="quote" required></textarea>
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit">Upload blog</button>
         </form>
         <div id="previewContainer" class="preview-container"></div>
     </div>

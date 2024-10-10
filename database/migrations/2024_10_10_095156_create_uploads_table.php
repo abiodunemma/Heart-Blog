@@ -11,9 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('photo')->nullable();
-            $table->string('bio')->nullable();
+        Schema::create('uploads', function (Blueprint $table) {
+            $table->id();
+            $table->string('userid');
+            $table->string('name');
+            $table->string('path');
+            $table->string('quote');
+            $table->timestamps();
+
+
+
         });
     }
 
@@ -22,9 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('photo');
-            $table->dropColumn('bio');
-        });
+        Schema::dropIfExists('uploads');
     }
 };

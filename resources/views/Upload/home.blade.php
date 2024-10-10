@@ -79,7 +79,7 @@
     }
 
  </style>
-    <title>Twitter Clone</title>
+    <title>Upload</title>
 </head>
 <body>
     <header>
@@ -120,6 +120,11 @@
         </div>
     </main>
 </body>
+@foreach ($images as $image)
+    <img src="{{ asset('storage/' . $upload->path) }}" alt="Image" style="width: 200px; height: auto;">
+@endforeach
+
+
 </html>
 
 
