@@ -18,13 +18,22 @@ class FrontController extends Controller
 
     public function upload(Request $request)
     {
-        $upload = new Upload();
+        $request->validate([
+            'userid' => 'required|interger|max:255',
+            'username' => 'required|string|max:255',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'quote' => 'required|string|max:255',
+        ]);
 
-        $upload->userid = request('userid');
-        $upload->name = request('name');
-        $upload->name = request('');
+        $imagePath = $request->file('image')->store('uploads', 'public');
 
-$upload->save();
+         $upload = new Upload();
+
+         $upload->userid = request('userid');
+         $upload->name = request('name');
+         $upload->image_path = request('imagepath');
+
+// $upload->save();
 
         // $request->validate(['image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048']);
 

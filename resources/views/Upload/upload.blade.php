@@ -77,7 +77,7 @@ input type="hidden" placeholder=""  name="userid" id="userid" value="{{ Auth::us
         <input type="hidden" placeholder=""  name="name" id="username" value="{{ Auth::user()->name  }}">
             <div class="form-group">
                 <label for="thumbnail">Thumbnail:</label>
-                <input type="file" id="thumbnail" name="image" accept="image/*" required>
+                <input type="file" id="image" name="image"required>
             </div>
             <div class="form-group">
                 <label for="quote">Quote:</label>

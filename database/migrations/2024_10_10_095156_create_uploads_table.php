@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('userid');
             $table->string('name');
-            $table->string('path');
+            $table->string('image_path');
             $table->string('quote');
             $table->timestamps();
 
