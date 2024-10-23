@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\GoogleController;
-use Illuminate\Support\Facades\FrontController;
+use  App\Http\Controllers\UploadController;
+use App\Http\Controllers\UserController;
+use App\Models\Upload;
+
 use App\Models\User;
 
 
@@ -12,8 +15,6 @@ Route::get('/', function () {
 });
 
 // home page functionality
-Route::get('/Upload/home', [App\Http\Controllers\FrontController::class, 'front'])->middleware(('auth'))->name('/Upload/home');
-Route::get('/Upload/upload', [App\Http\Controllers\FrontController::class, 'upload'])->middleware(('auth'))->name('/Upload/upload');
 
 
 
@@ -35,3 +36,7 @@ Route::get('/auth/google', [App\Http\Controllers\GoogleController::class, 'redir
 Route::get('/auth/google/callback', [App\Http\Controllers\GoogleController::class, 'handleGoogleCallback'])->name('auth.google.callback');
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

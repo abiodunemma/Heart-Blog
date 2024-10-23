@@ -136,7 +136,7 @@
 
                 <li><a href="{{ url('/Upload/home') }}">Home</a></li>
                 <li><a href="{{ url('User/edit-profile')}}">Edit profile</a></li>
-                <li><a href="{{ url('/Upload/upload') }}">Upload</a></li>
+                <li><a href="{{ url('/Upload/view') }}">Upload</a></li>
                 <li><a href="#">Settings</a></li>
                 <li><a href="/logout">Logout</a></li>
             </ul>
