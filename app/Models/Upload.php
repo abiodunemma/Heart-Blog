@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Upload extends Model
 {
+    protected $fillable = ['userid', 'quote', 'image_path'];
     use HasFactory;
+
 }

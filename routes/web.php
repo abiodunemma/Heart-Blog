@@ -17,6 +17,9 @@ Route::get('/', function () {
 // home page functionality
 
 
+Route::get('/Upload/view', [App\Http\Controllers\UploadController::class, 'get']);
+Route::post('/Upload/view', [App\Http\Controllers\UploadController::class, 'upload']);
+Route::get('/Upload/home', [App\Http\Controllers\UploadController::class, 'home']);
 
 
 //userkyc

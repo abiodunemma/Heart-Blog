@@ -120,9 +120,9 @@
         </div>
     </main>
 </body>
-@foreach ($images as $image)
+{{--  @foreach ($images as $image)
     <img src="{{ asset('storage/' . $upload->path) }}" alt="Image" style="width: 200px; height: auto;">
-@endforeach
+@endforeach  --}}
 
 
 </html>
